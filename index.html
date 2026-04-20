@@ -557,12 +557,23 @@
                                      gameState === 'won_blue' ? 'Blue Team Wins!' : 
                                      gameState === 'lost_assassin' ? 'Game Over' : ''}
                                 </h2>
-                                <button 
-                                    onClick={() => setIsTeacherMode(true)}
-                                    className="px-12 py-4 bg-[#0275d8] text-white rounded font-bold uppercase text-lg tracking-widest hover:opacity-90 transition-all shadow-xl"
-                                >
-                                    Play Again
-                                </button>
+                                <div className="flex gap-4">
+                                    <button 
+                                        onClick={() => generateBoard()}
+                                        className="px-8 py-4 bg-[#0275d8] text-white rounded font-bold uppercase text-lg tracking-widest hover:opacity-90 transition-all shadow-xl"
+                                    >
+                                        Play Again
+                                    </button>
+                                    <button 
+                                        onClick={() => {
+                                            setGameState('playing');
+                                            setIsTeacherMode(true);
+                                        }}
+                                        className="px-8 py-4 bg-[#444444] text-white rounded font-bold uppercase text-lg tracking-widest hover:opacity-90 transition-all shadow-xl"
+                                    >
+                                        Edit Words
+                                    </button>
+                                </div>
                             </motion.div>
                         )}
                     </AnimatePresence>
